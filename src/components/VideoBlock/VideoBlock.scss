@@ -1,0 +1,312 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.video-block {
+    width: 100%;
+    height: 1090px;
+    background-color: $blue;
+    color: $black;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 1260px) {
+        height: 1190px;
+    }
+
+    @media (max-width: 900px) {
+        height: 769px;
+    }
+
+    @media (max-width: 700px) {
+        height: 1120px;
+    }
+
+    .video-block-container {
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+        @include mixins.flex(column, start, start);
+
+        @media (max-width: 1260px) {
+            width: calc(100% - 120px);
+            margin: auto 60px;
+        }
+
+        @media (max-width: 700px) {
+            width: 100%;
+            height: 130%;
+            margin: 0;
+            padding: 0 16px;
+            overflow: hidden;
+        }
+
+        .video-block-details {
+            width: 100%;
+            height: 431px;
+            @include mixins.flex(row, start, start);
+
+            @media (max-width: 1260px) {
+                @include mixins.flex(column, start, start);
+            }
+        }
+
+        .video-block-player {
+            width: 100%;
+            height: 677px;
+            margin-top: 150px;
+            position: relative;
+
+            @media (max-width: 1260px) {
+                margin-top: 235px;
+            }
+
+            @media (max-width: 900px) {
+                height: 319px;
+                margin-top: 205px;
+            }
+
+            @media (max-width: 700px) {
+                margin-top: 585px;
+            }
+        }
+    }
+}
+
+.video-block-details {
+    .details-head {
+        width: 295px;
+
+        @media (max-width: 1260px) {
+            width: 100%;
+            order: 2;
+            @include mixins.flex(row, space-between, start);
+        }
+
+        @media (max-width: 700px) {
+            order: 0;
+            @include mixins.flex(column, start, start);
+        }
+
+        h3 {
+            margin: 142px 0 0 0;
+            @include mixins.font(Londrina Solid, 55px, normal, 400, 80%);
+
+            @media (max-width: 1260px) {
+                margin: 64px 0 0 0;
+            }
+
+            @media (max-width: 700px) {
+                margin: 375px 0 0 0;
+                @include mixins.font(Londrina Solid, 50px, normal, 400, 80%);
+            }
+        }
+
+        p {
+            margin: 24px 0 0 0;
+            @include mixins.font(Kumbh Sans, 16px, normal, 400, 140%);
+
+            @media (max-width: 1260px) {
+                width: 295px;
+                margin: 24px 0 0 0;
+                padding-right: 7px;
+            }
+
+            @media (max-width: 700px) {
+                padding-right: 0px;
+            }
+        }
+    }
+
+    .details-description {
+        display: block;
+        width: 905px;
+        height: 100%;
+        position: relative;
+
+        @media (max-width: 1260px) {
+            align-self: flex-end;
+        }
+
+        @media (max-width: 700px) {
+            width: 100%;        
+        }
+
+        .details-description-image-container {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+
+            @media (max-width: 700px) {
+                top: -489px;
+                right: 1%;
+            }
+
+            @media (max-width: 550px) {
+                top: -489px;
+                right: 150px;
+            }
+
+            .image-container-box {
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                .details-description-dog-image {
+                    width: 381px;
+                    position: absolute;
+                    left: -40px;
+                    top: -175px;
+                    transform: rotate(76.2deg);
+
+                    @media (max-width: 900px) {
+                        width: 300px;
+                        left: 168px;
+                        top: -78px;
+                    }
+
+                    @media (max-width: 700px) {
+                        width: 250px;
+                        left: 180px;
+                        top: -40px;
+                    }
+                }
+
+                .details-description-first-shoe-image {
+                    width: 417px;
+                    position: absolute;
+                    left: 25px;
+                    top: 110px;
+                    transform: rotate(-30deg);
+                    z-index: 1;
+
+                    @media (max-width: 900px) {
+                        width: 328px;
+                        left: 230px;
+                        top: 151px;
+                    }
+
+                    @media (max-width: 700px) {
+                        width: 273px;
+                        left: 240px;
+                        top: 157px;
+                    }
+                }
+
+                .details-description-second-shoe-image {
+                    width: 440px;
+                    position: absolute;
+                    left: 120px;
+                    top: 170px;
+                    transform: rotate(-30deg);
+                    z-index: 3;
+
+                    @media (max-width: 900px) {
+                        width: 346px;
+                        left: 302px;
+                        top: 195px;
+                    }
+
+                    @media (max-width: 700px) {
+                        width: 288px;
+                        
+                    }
+                }
+            }
+        }
+
+        .details-description-text-container {
+            margin-top: 100px;
+            padding-right: 7.5%;
+            gap: 25px;
+            @include mixins.flex(column, start, end);
+
+            @media (max-width: 900px) {
+                padding-right: 0;
+            }
+
+            @media (max-width: 700px) {
+                margin-top: 53px;
+                margin-left: -16px;
+                @include mixins.flex(column, start, start);
+            }
+
+            .text-container-box{
+                @include mixins.flex(row, end, start);
+
+                img {
+                    margin: 8px 15px 0 0;
+                }
+
+                .dot {
+                    display: none;
+
+                    @media (max-width: 700px) {
+                        display: block;
+                        margin: 8px 10px 0 0;;
+                    }
+                }
+
+                .vector-1,
+                .vector-2,
+                .vector-3 {
+                    display: block;
+
+                    @media (max-width: 900px) {
+                        display: none;
+                    }
+                }
+
+                .vector-1,
+                .vector-3 {
+                    z-index: 2;
+                }
+
+                .vector-2 {
+                    z-index: 4;
+                }
+
+                .vector-mobile-1,
+                .vector-mobile-2,
+                .vector-mobile-3 {
+                    display: none;
+
+                    @media (max-width: 900px) {
+                        display: block;
+                    }
+
+                    @media (max-width: 700px) {
+                        display: none;
+                    }
+                }
+
+                .vector-mobile-1,
+                .vector-mobile-3 {
+                    z-index: 2;
+                }
+
+                .vector-mobile-2 {
+                    z-index: 4;
+                }
+
+                .details-description-text {
+                    display: block;
+                    width: 232px;
+                    @include mixins.font(Kumbh Sans, 16px, normal, 400, 140%);
+                }
+            }
+        }
+    }
+}
+
+.video-block-player {
+
+    h4{
+        margin: 0 0 38px 0;
+        text-transform: uppercase;
+        @include mixins.font(Londrina Solid, 55px, normal, 400, 80%);
+
+        @media (max-width: 700px) {
+            width: 90%;
+            @include mixins.font(Londrina Solid, 50px, normal, 400, 80%);
+        }
+    }
+}

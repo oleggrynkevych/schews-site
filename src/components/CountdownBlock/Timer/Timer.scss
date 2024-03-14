@@ -1,0 +1,57 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.timer {
+    color: $white;
+    @include mixins.flex(row, start, center);
+
+    .days-container {
+        width: 82px;
+        height: 102px;
+        border-radius: 10px;
+        border: 1px solid $white;
+        margin-right: 20px;
+        @include mixins.flex(column, center, center);
+
+        @media (max-width: 500px) {
+            width: 71px;
+            height: 89px;
+        }
+    }
+
+    .time-container {
+        width: 255px;
+        height: 102px;
+        padding: 0 15px;
+        border-radius: 10px;
+        border: 1px solid $white;
+        @include mixins.flex(row, space-around, center);
+
+        @media (max-width: 500px) {
+            width: 222px;
+            height: 89px;
+        }
+
+        .hours,
+        .minutes,
+        .seconds {
+            width: 52px;
+            height: 102px;
+            @include mixins.flex(column, center, start);
+        }
+    }
+
+}
+
+.time-numbers {
+    @include mixins.font(Londrina Solid, 55px, normal, 400, 90%);
+
+    @media (max-width: 500px) {
+        @include mixins.font(Londrina Solid, 40px, normal, 400, 90%);
+    }
+}
+
+.time-text {
+    text-transform: uppercase;
+    @include mixins.font(Londrina Solid, 14px, normal, 400, 90%);
+}

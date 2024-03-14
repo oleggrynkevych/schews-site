@@ -1,0 +1,87 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.products-section {
+    width: 100%;
+    height: 731px;
+    padding-top: 111px;
+    background-color: $yellow;
+    overflow: hidden;
+    @include mixins.flex(row, center, center);
+
+    .products-section-container {
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+        @include mixins.flex(column, start, center);
+
+        @media (max-width: 1200px) {
+            width: calc(100% - 120px);
+            margin: auto 60px;
+            @include mixins.flex(column, start, start);
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+            margin: auto 16px;
+        }
+
+        h3 {
+            margin: 0 0 79px 0;
+            text-transform: uppercase;
+            @include mixins.font(Londrina Solid, 55px, normal, 400, 80%);
+
+            @media (max-width: 1200px) {
+                margin: 0 0 49px 0;
+            }
+
+            @media (max-width: 340px) {
+                display: none;
+            }
+        }
+
+        .products {
+            width: 100%;
+            height: 472px;
+            @include mixins.flex(row, space-between, center);
+        }
+    }
+}
+
+// Slider Styles
+
+.slick-slider {
+    width: 100% !important;
+    z-index: 50;
+
+    @media (max-width: 1200px) {
+        width: 244px !important;
+    }
+}
+
+.slick-track{
+    display: flex !important;
+    width: auto !important;
+}
+
+.slick-list {
+    overflow: visible !important;
+}
+
+.slick-slide {
+    width: 285px !important;
+
+    @media (max-width: 1200px) {
+        width: 244px !important;
+    }
+}
+
+.slick-arrow {
+    display: none !important;
+}
+
+.slick-dots {
+    display: none !important;
+}
+
+// End Slider Styles

@@ -1,0 +1,195 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.countdown-block {
+    width: 100%;
+    height: 624px;
+    background-color: $red;
+    @include mixins.flex(column, start, center);
+
+    @media (max-width: 1360px) {
+        height: 1047px;
+    }
+
+    .countdown-block-container {
+        width: 100%;
+        max-width: 1200px;
+        @include mixins.flex(row, start, center);
+
+        @media (max-width: 1360px) {
+            width: calc(100% - 120px);
+            margin: 0 60px;
+            @include mixins.flex(column, center, center);
+        }
+
+        @media (max-width: 729px) {
+            width: calc(100% - 32px);
+            margin: 0 16px;
+        }
+
+        .countdown-story-box {
+            width: 750px;
+            height: 600px;
+            margin: 113px 70px 0 0;
+            @include mixins.flex(row, start, center);
+
+            @media (max-width: 1360px) {
+                margin: 48px 0 0 0;
+            }
+
+            @media (max-width: 900px) {
+                width: 100%;
+                height: 654px;
+            }
+
+            @media (max-width: 729px) {
+                margin: 40px 0 0 0;
+            }
+        }
+
+        .countdown-timer-box {
+            @include mixins.flex(column, start, start);
+
+            @media (max-width: 1360px) {
+                margin-top: 65px;
+                @include mixins.flex(column, start, center);
+            }
+
+            @media (max-width: 729px) {
+                margin-top: 65px;
+                @include mixins.flex(column, start, start);
+            }
+
+            @media (max-width: 350px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.countdown-story-box {
+    position: relative;
+
+    .countdown-story {
+        width: 710px;
+        height: 100%;
+        border-radius: 10px;
+        border: 1px solid $black;
+        background-color: $white;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)), url('../../images/background-for-story.png');
+        position: relative;
+        z-index: 5;
+        @include mixins.flex(row, start, center);
+
+        @media (max-width: 900px) {
+            width: 95%;
+        }
+
+        @media (max-width: 729px) {
+            @include mixins.flex(column, flex-start, center);
+        }
+
+        img {
+            width: 300px;
+            margin-left: 47px;
+
+            @media (max-width: 900px) {
+                width: 246px;
+                height: 398px;
+            }
+
+            @media (max-width: 729px) {
+                width: 264px;
+                height: 192px;
+                margin-left: 0;
+                object-fit: cover;
+                margin-top: 33px;
+            }
+
+            @media (max-width: 350px) {
+                width: 222px;
+                height: 165px;
+            }
+        }
+
+        .countdown-story-text{
+            margin-left: 40px;
+            width: 253px;
+            color: $black;
+
+            @media (max-width: 900px) {
+                margin-left: 21px;
+            }
+
+            @media (max-width: 729px) {
+                margin-left: 0;
+                margin-top: 36px;
+            }
+
+            @media (max-width: 350px) {
+                width: 222px;
+                margin-top: 20px;
+            }
+
+            h3 {
+                margin: 0 0 16px 0;
+                text-transform: uppercase;
+                @include mixins.font(Londrina Solid, 35px, normal, 400, 110%);
+            }
+
+            span {
+                @include mixins.font(Kumbh Sans, 16px, normal, 400, 140%);
+
+                @media (max-width: 900px) {
+                    @include mixins.font(Kumbh Sans, 16px, normal, 400, 130%);
+                }
+            }
+        }
+    }
+
+    .countdown-story-for-bg-first,
+    .countdown-story-for-bg-second {
+        border-radius: 10px;
+        border: 1px solid $black;
+        background-color: $white;
+        position: absolute;
+    }
+
+    .countdown-story-for-bg-first {
+        width: 725px;
+        height: 93%;
+        z-index: 4;
+
+        @media (max-width: 900px) {
+            width: 97.5%;
+        }
+    }
+
+    .countdown-story-for-bg-second {
+        width: 740px;
+        height: 86%;
+        z-index: 3;
+
+        @media (max-width: 900px) {
+            width: 100%;
+        }
+    }
+}
+
+.countdown-timer-box {
+
+    h4 {
+        margin: 0 0 35px 0;
+        color: $white;
+        text-transform: uppercase;
+        @include mixins.font(Londrina Solid, 55px, normal, 400, 80%);
+
+        @media (max-width: 1360px) {
+            text-align: center;
+        }
+
+        @media (max-width: 729px) {
+            text-align: start;
+        }
+    }
+}

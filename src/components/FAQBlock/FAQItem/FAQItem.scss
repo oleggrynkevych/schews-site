@@ -1,0 +1,56 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.faq-item {
+    border-bottom: 1px solid rgba(27, 27, 27, 0.20);
+    transition: all 0.5s ease-in-out;
+
+
+    .faq-item-question {
+        height: 90px;
+        cursor: pointer;
+        @include mixins.flex(row, space-between, center);
+
+        @media (max-width: 700px) {
+            height: 94px;
+        }
+
+        span {
+            @include mixins.font(Kumbh Sans, 28px, normal, 600, 130%);
+            
+            @media (max-width: 700px) {
+                width: 85%;
+                @include mixins.font(Kumbh Sans, 22px, normal, 700, 100%);
+            }
+        }
+
+        .arrow-icon {
+            transition: all 0.5s ease-in-out;
+
+            &.open {
+                transform: rotate3d(1, 0, 0, 180deg);
+            }
+        }
+    }
+
+    .faq-item-answer {
+        width: 500px;
+        max-height: 0;
+        margin: -13px 0 12px 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.5s ease, opacity 0.4s ease-in-out, margin 0.4s ease-in-out;
+        @include mixins.font(Kumbh Sans, 16px, normal, 400, 140%);
+
+        @media (max-width: 700px) {
+            width: 85%;
+        }
+
+        &.open {
+            opacity: 1;
+            max-height: 300px;
+            margin: -13px 0 25px 0;
+            transition: max-height 1.2s ease-in-out, opacity 0.9s ease-in-out, margin 0.7s ease-in-out;
+        }
+    }
+}

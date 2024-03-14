@@ -1,0 +1,52 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.benefit-card {
+    width: 266px;
+    height: 266px;
+    @include mixins.flex(column, start, start);
+
+    @media (max-width: 1100px) {
+        width: 295px;
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 1000px) {
+        width: 266px;
+    }
+
+    @media (max-width: 650px) {
+        height: auto;
+        margin-bottom: 32px;
+        @include mixins.flex(column, start, center);
+    }
+
+    img {
+        margin-bottom: 32px;
+
+        @media (max-width: 650px) {
+            margin-bottom: 16px;
+        }
+    }
+
+    h5 {
+        margin: 0 0 12px 0;
+        text-transform: uppercase;
+        @include mixins.font(Londrina Solid, 35px, normal, 400, 110%);
+
+        @media (max-width: 650px) {
+            margin: 0 0 8px 0;
+        }
+    }
+
+    p {
+        width: 83%;
+        margin: 0;
+        @include mixins.font(Kumbh Sans, 16px, normal, 400, 140%);
+
+        @media (max-width: 650px) {
+            width: 91%;
+            text-align: center;
+        }
+    }
+}
